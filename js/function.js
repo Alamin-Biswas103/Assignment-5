@@ -115,8 +115,20 @@ for(let copybtn of copyButtons){
         document.getElementById("copy-count").innerText = convertedCopyCount;
 
         let number = serviceNumbersArray[btnIndex].innerText;
-        navigator.clipboard.writeText(parseInt(number))
+        navigator.clipboard.writeText(number)
         
+        .then(function() {
+        let toast = document.getElementById("toast");
+        toast.style.opacity = 1; 
+        setTimeout(function() {
+          toast.style.opacity = 0;
+        }, 2000);
+      })
+      .catch(function(err) {
+        console.error('Copy failed', err);
+      });
+       
+
 
     })
 }
