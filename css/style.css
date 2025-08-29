@@ -33,3 +33,13 @@
     "wdth" 100;
 }
 
+
+/* Main grid */
+#main {
+  display: grid;
+  grid-template-columns: 1fr; /* single column by default */
+  gap: 2rem;
+  padding: 3rem 2rem;
+}
+
+
