@@ -99,6 +99,10 @@ document.getElementById("clear-history-btn").addEventListener("click",function()
 
 
 
+
+
+
+
 // Copy button making dynamic here
 let copyButtons = document.querySelectorAll(".copy-btn");
 let copyButtonsArray = Array.from(copyButtons);
