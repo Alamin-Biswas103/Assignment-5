@@ -33,8 +33,3 @@
     "wdth" 100;
 }
 
-/* Buttons hover effect of navbar right */
-.nav-right>button:hover{
-  background: gray;
-  transition: 1500ms;
-}
