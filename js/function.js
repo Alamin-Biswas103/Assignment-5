@@ -52,7 +52,7 @@ for(let callBtn of callButtons){
             let historyParent = document.getElementById("history-section-parent");
 
             let historyDiv = document.createElement("div");
-            historyDiv.classList.add("flex", "justify-between", "items-start", "mt-2");
+            historyDiv.classList.add("mt-2","grid","grid-cols-[70%_30%]","gap-5");
 
             let infoDiv = document.createElement("div");
 
@@ -95,4 +95,29 @@ for(let callBtn of callButtons){
 document.getElementById("clear-history-btn").addEventListener("click",function(){
     document.getElementById("history-section-parent").innerHTML = '';
 })
+
+
+
+
+// Copy button making dynamic here
+let copyButtons = document.querySelectorAll(".copy-btn");
+let copyButtonsArray = Array.from(copyButtons);
+
+let copyCount = document.getElementById("copy-count").innerText;
+convertedCopyCount = parseInt(copyCount);
+
+for(let copybtn of copyButtons){
+    copybtn.addEventListener("click",function(){
+        let btnIndex = copyButtonsArray.indexOf(copybtn);
+
+        convertedCopyCount ++;
+        alert('Text copied to clipboard!');
+        document.getElementById("copy-count").innerText = convertedCopyCount;
+
+        let number = serviceNumbersArray[btnIndex].innerText;
+        navigator.clipboard.writeText(parseInt(number))
+        
+
+    })
+}
 
